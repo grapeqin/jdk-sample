@@ -9,9 +9,7 @@ import java.util.List;
 
 import static java.lang.System.out;
 
-/**
- * 类声明组件爬虫
- */
+/** 类声明组件爬虫 */
 public class ClassDeclarationSpy {
 
   public static void main(String... args) {
@@ -24,7 +22,9 @@ public class ClassDeclarationSpy {
       TypeVariable[] tv = c.getTypeParameters();
       if (tv.length != 0) {
         out.format("  ");
-        for (TypeVariable t : tv) out.format("%s ", t.getName());
+        for (TypeVariable t : tv) {
+          out.format("%s ", t.getName());
+        }
         out.format("%n%n");
       } else {
         out.format("  -- No Type Parameters --%n%n");
@@ -33,7 +33,9 @@ public class ClassDeclarationSpy {
       out.format("Implemented Interfaces:%n");
       Type[] intfs = c.getGenericInterfaces();
       if (intfs.length != 0) {
-        for (Type intf : intfs) out.format("  %s%n", intf.toString());
+        for (Type intf : intfs) {
+          out.format("  %s%n", intf.toString());
+        }
         out.format("%n");
       } else {
         out.format("  -- No Implemented Interfaces --%n%n");
@@ -43,7 +45,9 @@ public class ClassDeclarationSpy {
       List<Class> l = new ArrayList<Class>();
       printAncestor(c, l);
       if (l.size() != 0) {
-        for (Class<?> cl : l) out.format("  %s%n", cl.getCanonicalName());
+        for (Class<?> cl : l) {
+          out.format("  %s%n", cl.getCanonicalName());
+        }
         out.format("%n");
       } else {
         out.format("  -- No Super Classes --%n%n");
