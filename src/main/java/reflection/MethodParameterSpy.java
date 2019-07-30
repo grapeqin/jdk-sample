@@ -20,7 +20,7 @@ public class MethodParameterSpy {
 		printMethods(Class.forName(args[0]));
 	}
 
-	private static void printConstructors(Class c){
+	public static void printConstructors(Class c){
 		out.format("%s%n",c.toGenericString());
 		Constructor<?>[] constructors = c.getConstructors();
 		out.format(fmt,"constructors count",constructors.length);
@@ -44,7 +44,7 @@ public class MethodParameterSpy {
 		}
 	}
 
-	private static void printMethods(Class c){
+	public static void printMethods(Class c){
 		Method[] methods = c.getDeclaredMethods();
 		out.format(fmt,"methods count",methods.length);
 		for(Method method : methods){
